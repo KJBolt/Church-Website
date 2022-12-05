@@ -28,7 +28,7 @@ function SecondSection(props) {
                         data-aos-easing="ease-in-out"
                         data-aos-duration="500"
                     >
-                        <img src={require('../assets/thechristians.jpg')} alt=""/>
+                        <img src={require('../assets/bible3.jpg')} alt=""/>
                     </div>
                 </div>
             </div>

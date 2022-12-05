@@ -1,6 +1,6 @@
 import React from 'react';
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination } from "swiper";
+import { Autoplay, Pagination } from "swiper";
 import "swiper/css";
 import "swiper/css/pagination";
 
@@ -15,7 +15,7 @@ function SeventhSection() {
                     }}
                     autoplay={true}
                     loop={true}
-                    modules={[Pagination]}
+                    modules={[Autoplay,Pagination]}
                     className="mySwiper"
                 >
                     <SwiperSlide className='slider'>

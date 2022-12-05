@@ -2,7 +2,7 @@ import React from 'react';
 
 function Footer(props) {
     return (
-        <div style={{height:'auto'}}>
+        <div style={{height:'auto', background:'#f8f5f2'}}>
             <div className="container">
                 <div className="footer-content">
                     <div className="row">
