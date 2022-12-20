@@ -5,7 +5,7 @@ function FirstSection() {
   const [showMenu, setShowMenu] = useState(true);
   const location = useLocation();
   const path = location.pathname.split('/')[1]
-  console.log(path)
+  console.log(path);
 
   return (
     <div className='hero'>
@@ -18,19 +18,23 @@ function FirstSection() {
         }
 
         {!showMenu ? <ul className='sidebar-list'>
-          <Link to='/' style={{ textDecoration:'none', color:`${path === '' ? '#f45d48' : '#fff'}` }}>
+          <Link to='/' style={{ textDecoration:'none', color:`${path === 'home' ? '#f45d48' : '#fff'}` }}>
             <li>Home</li>
           </Link>
           
-          <Link to='/teachings' style={{ textDecoration:'none', color:`${path === '/teachings' ? '#f45d48' : '#fff'}` }}>
+          <Link to='/teachings' style={{ textDecoration:'none', color:`${path === 'teachings' ? '#f45d48' : '#fff'}` }}>
             <li>Bible Study</li>
           </Link>
 
-          <Link to='/gallery' style={{ textDecoration:'none', color:`${path === '/gallery' ? '#f45d48' : '#fff'}` }}>
+          <Link to='/dashboard' style={{ textDecoration:'none', color:`${path === 'dashboard' ? '#f45d48' : '#fff'}` }}>
+            <li>Dashboard</li>
+          </Link>
+
+          <Link to='/gallery' style={{ textDecoration:'none', color:`${path === 'gallery' ? '#f45d48' : '#fff'}` }}>
             <li>Gallery & Events</li>
           </Link>
 
-          <Link to='/about' style={{ textDecoration:'none', color:`${path === '/about' ? '#f45d48' : '#fff'}` }}>
+          <Link to='/about' style={{ textDecoration:'none', color:`${path === 'about' ? '#f45d48' : '#fff'}` }}>
             <li>About Us</li>
           </Link>
         </ul> : <div></div>}
@@ -43,10 +47,17 @@ function FirstSection() {
             </div>
             <div className="right">
               <ul>
-                <li className='left animate__animated animate__fadeInUp animate__delay-0.1s animate__slow'>Home</li>
+                <Link  to='/' style={{ textDecoration:'none', color:'#fff' }}>
+                  <li className='left animate__animated animate__fadeInUp animate__delay-0.1s animate__slow'>Home</li>
+                </Link>
+                
 
                 <Link to='/teachings' style={{ textDecoration:'none', color:'#fff' }}>
                   <li className='left animate__animated animate__fadeInUp animate__delay-0.2s animate__slow'>Bible Study</li>
+                </Link>
+
+                <Link to='/dashboard' style={{ textDecoration:'none', color:'#fff' }}>
+                  <li className='left animate__animated animate__fadeInUp animate__delay-0.2s animate__slow'>Dashboard</li>
                 </Link>
                
                <Link to='/gallery' style={{ textDecoration:'none', color:'#fff' }}>
@@ -66,15 +77,20 @@ function FirstSection() {
         </div>
 
         <div className="landing-page animate__animated animate__fadeInUp animate__delay-0.7s animate__slow">
-          <div className="title">
-            <h3>Act 11:26</h3>
-          </div>
-          <div className="subtitle">
-            <h3>Let the bible speak</h3>
-          </div>
+            <div className="title">
+                <h3>Act 11:26</h3>
+            </div>
+            <div className="subtitle">
+                <h3>Let the bible speak</h3>
+            </div>
+            <Link to={'/teachings'} style={{textDecoration:' none'}}>
+                <div className="learn-btn">
+                    <button>Study Here</button>
+                </div>
+            </Link>
         </div>
 
-      </div>      
+      </div>
     </div>
   )
 }

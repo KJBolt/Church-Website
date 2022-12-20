@@ -3,7 +3,7 @@ import React from 'react';
 function FooterExtra() {
     return (
         <div className='footer-extra'>
-            <p>Designed by Kenneth Rockson @ 2022</p>
+            <p>© 2022. All rights reserved by Kenneth </p>
         </div>
     );
 }

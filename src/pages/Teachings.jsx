@@ -1,9 +1,9 @@
 import React from 'react';
-import FooterExtra from '../components/FooterExtra';
 import Navbar from '../components/Navbar';
 import Featured from '../components/TeachingsContent/Featured';
 import SundayTeachings from '../components/TeachingsContent/SundayTeachings';
 import Videos from '../components/Videos';
+import Arrow from "../components/Arrow";
 
 function Teachings() {
   return (
@@ -12,7 +12,7 @@ function Teachings() {
         <Featured />
         <SundayTeachings />
         <Videos />
-        <FooterExtra />
+        <Arrow/>
     </div>
   )
 }

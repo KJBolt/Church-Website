@@ -3,39 +3,72 @@ import {Link, useLocation} from 'react-router-dom';
 
 function Navbar() {
     const [showMenu, setShowMenu] = useState(true);
+    const admin = true;
     const location = useLocation();
-    const path = location.pathname.split('/')[1]
+    const path = location.pathname.split('/')[1];
 
 
   return (
-    <div className="container" style={{ position:'relative' }}>
+      <>
         <div className='navbar-section'>
-            <div className='nav-wrapper'>
-                <Link to='/' style={{ textDecoration:'none', color:'black' }}>
-                    <div className="logo">
-                        <h4>Christians</h4>
+            {admin ?
+                <div className='nav-wrapper'>
+                    <Link to='/' style={{ textDecoration:'none', color:'black' }}>
+                        <div className="logo">
+                            <h4>Christians</h4>
+                        </div>
+                    </Link>
+                    <div className="links">
+                        <ul>
+                            <Link to='/' style={{ textDecoration:'none', color:`${path === '' ? '#f45d48' : 'black'}` }}>
+                                <li>Home</li>
+                            </Link>
+
+                            <Link to='/teachings' style={{ textDecoration:'none', color:`${path === 'teachings' ? '#f45d48' : 'black'}` }}>
+                                <li>Bible Study</li>
+                            </Link>
+
+                            <Link to='/dashboard/' style={{ textDecoration:'none', color:`${path === 'dashboard' ? '#f45d48' : 'black'}` }}>
+                                <li>Dashboard</li>
+                            </Link>
+
+                            <Link to='/gallery' style={{ textDecoration:'none', color:`${path === 'gallery' ? '#f45d48' : 'black'}` }}>
+                                <li>Gallery & Events</li>
+                            </Link>
+
+                            <Link to='/about' style={{ textDecoration:'none', color:`${path === 'about' ? '#f45d48' : 'black'}` }}>
+                                <li>About Us</li>
+                            </Link>
+                        </ul>
                     </div>
-                </Link>
-                <div className="links">
-                    <ul>
-                        <Link to='/' style={{ textDecoration:'none', color:`${path === '' ? '#f45d48' : 'black'}` }}>
-                            <li>Home</li>
-                        </Link>
-                        
-                        <Link to='/teachings' style={{ textDecoration:'none', color:`${path === 'teachings' ? '#f45d48' : 'black'}` }}>
-                            <li>Bible Study</li>
-                        </Link>
+                </div> :
+                <div className='nav-wrapper'>
+                    <Link to='/' style={{ textDecoration:'none', color:'black' }}>
+                        <div className="logo">
+                            <h4>Christians</h4>
+                        </div>
+                    </Link>
+                    <div className="links">
+                        <ul>
+                            <Link to='/' style={{ textDecoration:'none', color:`${path === '' ? '#f45d48' : 'black'}` }}>
+                                <li>Home</li>
+                            </Link>
 
-                        <Link to='/gallery' style={{ textDecoration:'none', color:`${path === 'gallery' ? '#f45d48' : 'black'}` }}>
-                            <li>Gallery & Events</li>
-                        </Link>
+                            <Link to='/teachings' style={{ textDecoration:'none', color:`${path === 'teachings' ? '#f45d48' : 'black'}` }}>
+                                <li>Bible Study</li>
+                            </Link>
 
-                        <Link to='/about' style={{ textDecoration:'none', color:`${path === 'about' ? '#f45d48' : 'black'}` }}>
-                            <li>About Us</li>
-                        </Link>
-                    </ul>
-                </div>
-            </div>
+                            <Link to='/gallery' style={{ textDecoration:'none', color:`${path === 'gallery' ? '#f45d48' : 'black'}` }}>
+                                <li>Gallery & Events</li>
+                            </Link>
+
+                            <Link to='/about' style={{ textDecoration:'none', color:`${path === 'about' ? '#f45d48' : 'black'}` }}>
+                                <li>About Us</li>
+                            </Link>
+                        </ul>
+                    </div>
+                </div>}
+
             <div className="media-handles">
                 <i title='facebook' className="fa fa-facebook" aria-hidden="true"></i>
                 <i title='youtube' className="fa fa-youtube-play" aria-hidden="true"></i>
@@ -43,7 +76,6 @@ function Navbar() {
             <div className="menu" onClick={() => setShowMenu(!showMenu)}>
                 {showMenu ? <i className="fa fa-bars"  aria-hidden="true"></i> : <i className="fa fa-times" aria-hidden="true"></i>}
             </div>
-
         </div>
 
         {/*Drawer*/}
@@ -58,6 +90,10 @@ function Navbar() {
                     <li>Bible Study</li>
                 </Link>
 
+                <Link to='/dashboard' style={{ textDecoration:'none', color:`${path === '/dashboard' ? '#f45d48' : '#fff'}` }}>
+                    <li>Dashboard</li>
+                </Link>
+
                 <Link to='/gallery' style={{ textDecoration:'none', color:`${path === '/gallery' ? '#f45d48' : '#fff'}` }}>
                     <li>Gallery & Events</li>
                 </Link>
@@ -67,7 +103,7 @@ function Navbar() {
                 </Link>
             </ul> : <div></div>}
         </div>
-    </div>
+      </>
   )
 }
 

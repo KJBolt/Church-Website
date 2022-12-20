@@ -11,6 +11,7 @@ import NinethSection from "../components/NinethSection";
 import TenthSection from "../components/TenthSection";
 import Footer from "../components/Footer";
 import FooterExtra from "../components/FooterExtra";
+import Arrow from "../components/Arrow";
 
 function Home() {
   return (
@@ -27,6 +28,7 @@ function Home() {
         <TenthSection />
         <Footer />
         <FooterExtra/>
+        <Arrow/>
       </div>
   )
 }

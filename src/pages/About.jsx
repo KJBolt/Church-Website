@@ -40,12 +40,18 @@ function About() {
           <div className="ab-location">
             <div className="row">
               <div className="left col-md-6 col-sm-12 col-12">
-                <img src={require('../assets/location.jpg')} alt="" />
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1985.4711729745216!2d-0.24229374202474913!3d5.575542498989416!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfdf99e9a654e43f%3A0xe08cf25020c1bb45!2sOtisahele%20St%2C%20Accra!5e0!3m2!1sen!2sgh!4v1671225494401!5m2!1sen!2sgh"
+                     style={{border:0, height:300, width:'100%'}} allowFullScreen="" loading="lazy" title='map'
+                    referrerPolicy="no-referrer-when-downgrade"
+                />
               </div>
               <div className="right col-md-6 col-sm-12 col-12">
                 <div className="title">
-                  <h3>Location</h3>
+                  <h3>Contact Us</h3>
                   <p>The Christians Main-Branch</p>
+                  <p>P.O.Box 1673 Dansoman-Estate, Accra</p>
+                  <p>0265896378, 0509912663</p>
                   <p>Otisahele-Street, Accra</p>
                 </div>
               </div>

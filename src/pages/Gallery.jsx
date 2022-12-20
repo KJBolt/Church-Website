@@ -7,6 +7,8 @@ import { Pagination, Navigation, Autoplay } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import {images} from '../Data';
 import Events from "../components/Events";
+import PhotoGallery from "../components/PhotoGallery";
+import Arrow from '../components/Arrow';
 
 function Gallery() {
 
@@ -92,10 +94,12 @@ function Gallery() {
                     </div>
 
                     <Events />
+                    <PhotoGallery />
                 </div>
             </div>
-
         </div>
+
+        <Arrow />
     </div>
   )
 }
